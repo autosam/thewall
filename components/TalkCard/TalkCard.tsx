@@ -1,7 +1,8 @@
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../Button";
 import { useEffect, useState } from "react";
-import { GenderNames } from "@/app/types/Gender";
+import { GenderNames } from "@/types/Gender";
+import classNames from "classnames";
 
 export const TalkCard = (props: any) => {
   const { text, gender, dark } = props;
@@ -14,23 +15,22 @@ export const TalkCard = (props: any) => {
     else setRoundingAngle("rounded-tl-3xl");
   }, []);
 
-  let background = "bg-white",
-    textColor = "text-black",
-    metaTextColor = "text-[#616161]";
-  if (dark) {
-    background = "bg-[#343434]";
-    textColor = "text-white";
-    metaTextColor = "text-[#939393]";
-  }
+  const cardClass = classNames(`flex flex-col p-6 gap-3 ${roundingAngle}`, {
+    "bg-white text-black": !dark,
+    "bg-[#343434] text-white": dark,
+  });
+  const metadataClass = classNames("flex gap-4", {
+    "text-[#616161]": !dark,
+    "text-[#939393]": dark,
+  });
+
   return (
-    <div
-      className={`flex flex-col p-6 gap-3 ${background} ${textColor} ${roundingAngle}`}
-    >
+    <div className={cardClass}>
       <div
         id="top-container"
-        className="flex justify-between w-full items-center h-8"
+        className="flex justify-between w-full items-center h-auto flex-wrap"
       >
-        <div id="metadata" className={`flex gap-4 ${metaTextColor}`}>
+        <div id="metadata" className={metadataClass}>
           <div>{GenderNames[gender]}</div>
           <div>Aug 27</div>
         </div>

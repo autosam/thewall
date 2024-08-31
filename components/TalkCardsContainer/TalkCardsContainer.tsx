@@ -2,7 +2,7 @@
 import { uid } from "uid";
 import { TalkCard } from "../TalkCard/TalkCard";
 import { TalkCardsContainerProps } from "./TalkCardsContainer.types";
-import { TalkData } from "@/app/types/TalkData";
+import { TalkData } from "@/types/TalkData";
 
 export const TalkCardsContainer = (props: TalkCardsContainerProps) => {
   const { cards } = props;

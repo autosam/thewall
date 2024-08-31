@@ -5,7 +5,8 @@
 body {
   background-color: black;
   font-size: 14px;
-  padding: 16px
+  padding: 16px;
+  color: white;
 }
 
 /* :root {
