@@ -5,7 +5,7 @@ import { GenderNames } from "@/types/Gender";
 import classNames from "classnames";
 
 export const TalkCard = (props: any) => {
-  const { text, gender, dark } = props;
+  const { content, gender, dark } = props;
   const [roundingAngle, setRoundingAngle] = useState("");
   useEffect(() => {
     const random = Math.random();
@@ -45,7 +45,7 @@ export const TalkCard = (props: any) => {
       </div>
       <div id="text-container">
         <div className="text-4xl">
-          {text ??
+          {content ??
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}
         </div>
       </div>

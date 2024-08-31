@@ -1,6 +1,6 @@
 import { Gender } from "./Gender";
 
 export type TalkData = {
-  text: string;
+  content: string;
   gender: Gender;
 };

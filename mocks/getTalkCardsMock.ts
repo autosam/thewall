@@ -1,7 +1,6 @@
 import { Genders } from "@/types/Gender";
 import { TalkData } from "@/types/TalkData";
 
-
 const getRandomLoremIpsum = () => {
   const sample =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ";
@@ -11,22 +10,22 @@ const getRandomLoremIpsum = () => {
 
 export const getTalkCardsMock = (): TalkData[] => {
   return [
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.SHE },
-    { text: getRandomLoremIpsum(), gender: Genders.SHE },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.SHE },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.SHE },
-    { text: getRandomLoremIpsum(), gender: Genders.HE },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.HE },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.HE },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.THEY },
-    { text: getRandomLoremIpsum(), gender: Genders.SHE },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.SHE },
+    { content: getRandomLoremIpsum(), gender: Genders.SHE },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.SHE },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.SHE },
+    { content: getRandomLoremIpsum(), gender: Genders.HE },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.HE },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.HE },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.THEY },
+    { content: getRandomLoremIpsum(), gender: Genders.SHE },
   ];
 };
