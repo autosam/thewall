@@ -2,18 +2,36 @@ import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../Button";
 import { useEffect, useState } from "react";
 import { GenderNames } from "@/types/Gender";
+import moment from "moment";
 import classNames from "classnames";
+import { useTalkCard } from "./TalkCard.hooks";
 
 export const TalkCard = (props: any) => {
-  const { content, gender, dark } = props;
-  const [roundingAngle, setRoundingAngle] = useState("");
-  useEffect(() => {
-    const random = Math.random();
-    if (random >= 0.75) setRoundingAngle("rounded-br-3xl");
-    else if (random >= 0.5) setRoundingAngle("rounded-bl-3xl");
-    else if (random >= 0.25) setRoundingAngle("rounded-tr-3xl");
-    else setRoundingAngle("rounded-tl-3xl");
-  }, []);
+  const {
+    id,
+    content,
+    gender,
+    time,
+    isMine,
+    myLikeInteraction,
+    likeCount: initialLikeCount,
+    dislikeCount: initialDislikeCount,
+  } = props;
+
+  let { dark } = props;
+  if (isMine) dark = true;
+
+  const {
+    roundingAngle,
+    isLiking,
+    handleSetLikeState,
+    likeState,
+    hasLiked,
+    likeCount,
+    dislikeCount,
+    likeLoading,
+    dislikeLoading,
+  } = useTalkCard(id, myLikeInteraction, initialLikeCount, initialDislikeCount);
 
   const cardClass = classNames(`flex flex-col p-6 gap-3 ${roundingAngle}`, {
     "bg-white text-black": !dark,
@@ -24,22 +42,44 @@ export const TalkCard = (props: any) => {
     "text-[#939393]": dark,
   });
 
+  const trueButtonClass = classNames("h-7 relative", {
+    "bg-green-800 hover:bg-green-900 text-white": likeState && hasLiked,
+  });
+
+  const falseButtonClass = classNames("h-7 relative", {
+    "bg-red-800 hover:bg-red-900 text-white": !likeState && hasLiked,
+  });
+
   return (
-    <div className={cardClass}>
+    <div className={cardClass} data-id={id}>
       <div
         id="top-container"
         className="flex justify-between w-full items-center h-auto flex-wrap"
       >
         <div id="metadata" className={metadataClass}>
-          <div>{GenderNames[gender]}</div>
-          <div>Aug 27</div>
+          <div>{isMine ? <b>You</b> : GenderNames[gender]}</div>
+          <div>{moment(time).format("MMM Do")}</div>
         </div>
         <div id="controls" className="flex gap-2 py-1">
-          <Button dark={dark} className="h-7" leftIcon={faTimes}>
+          <Button
+            onClick={() => handleSetLikeState(false)}
+            dark={dark}
+            className={falseButtonClass}
+            leftIcon={faTimes}
+            loading={dislikeLoading}
+          >
             False
+            <Badge>{dislikeCount}</Badge>
           </Button>
-          <Button dark={dark} className="h-7" leftIcon={faCheck}>
+          <Button
+            onClick={() => handleSetLikeState(true)}
+            dark={dark}
+            className={trueButtonClass}
+            leftIcon={faCheck}
+            loading={likeLoading}
+          >
             True
+            <Badge>{likeCount}</Badge>
           </Button>
         </div>
       </div>
@@ -49,6 +89,14 @@ export const TalkCard = (props: any) => {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}
         </div>
       </div>
+    </div>
+  );
+};
+
+const Badge = ({ children }) => {
+  return (
+    <div className="text-inherit bg-inherit absolute left-1 text-[8px] w-5 h-5 inline-flex justify-center items-center rounded-full font-semibold">
+      {children}
     </div>
   );
 };

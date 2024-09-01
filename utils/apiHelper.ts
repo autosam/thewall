@@ -22,6 +22,15 @@ export const ENDPOINTS: { [key: string]: ApiEndpoint } = {
       content: "content",
     },
   },
+  setPostLikeState: {
+    action: "setPostLikeState",
+    parameters: {
+      userId: "userId",
+      postId: "postId",
+      state: "state",
+      remove: "remove",
+    },
+  },
 };
 
 // export const useApiRequest = (endpoint: ApiEndpoint, params?: {}) => {

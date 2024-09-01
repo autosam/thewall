@@ -12,7 +12,7 @@ export const useInputBar = ({ triggerRefresh }) => {
   const [isGenderLoading, setIsGenderLoading] = useState(true);
   const [content, setContent] = useState("");
   const [shouldEnablePost, setShouldEnablePost] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const { response, error, isLoading } = useApiRequest(
@@ -32,9 +32,9 @@ export const useInputBar = ({ triggerRefresh }) => {
       if (inputRef.current) {
         inputRef.current.value = "";
       }
+      setIsSubmitDisabled(true);
       setIsModalOpen(true);
-      // triggerRefresh();
-      console.log("hey", { isLoading, response });
+      triggerRefresh();
     }
   }, [isLoading, response]);
 
@@ -47,6 +47,8 @@ export const useInputBar = ({ triggerRefresh }) => {
 
     if (inputRef?.current?.value) setIsSubmitDisabled(false);
     else setIsSubmitDisabled(true);
+
+    setIsModalOpen(false);
   };
 
   const handleGenderChange = () => {

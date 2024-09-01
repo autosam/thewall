@@ -40,7 +40,7 @@ export const TalkCardsContainer = (props: TalkCardsContainerProps) => {
           {cardsCol.map((card: TalkData, ci: number) => {
             let dark = false;
             if (ci % 3 == i % 2) dark = true;
-            return <TalkCard dark={false} key={uid()} {...card} />;
+            return <TalkCard isMine={card.isMine} key={uid()} {...card} />;
           })}
         </div>
       ))}
