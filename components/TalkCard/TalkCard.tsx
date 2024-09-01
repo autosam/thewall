@@ -57,7 +57,15 @@ export const TalkCard = (props: any) => {
         className="flex justify-between w-full items-center h-auto flex-wrap"
       >
         <div id="metadata" className={metadataClass}>
-          <div>{isMine ? <b>You</b> : GenderNames[gender]}</div>
+          <div>
+            {isMine ? (
+              <div>
+                <b>You</b> ({GenderNames[gender]})
+              </div>
+            ) : (
+              GenderNames[gender]
+            )}
+          </div>
           <div>{moment(time).format("MMM Do")}</div>
         </div>
         <div id="controls" className="flex gap-2 py-1">
