@@ -68,17 +68,17 @@ export const InputBar = ({ triggerRefresh }: InputBarProps) => {
             SEND
           </Button>
         </div>
+        {isModalOpen && (
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-[#00ff0054] backdrop-blur-lg p-2 px-6 rounded-t-md inline-flex justify-center items-center gap-2 box-content">
+            {/* <FontAwesomeIcon icon={faBrain} className="fa-xs"></FontAwesomeIcon> */}
+            <p>Your talk card have been successfully created!</p>
+            <br />
+            <button onClick={() => setIsModalOpen(false)}>
+              <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+            </button>
+          </div>
+        )}
       </div>
-      {isModalOpen && (
-        <div className="absolute top-8 bg-[#00ff0054] backdrop-blur-lg p-2 px-6 rounded-t-md inline-flex justify-center items-center gap-2 box-content">
-          {/* <FontAwesomeIcon icon={faBrain} className="fa-xs"></FontAwesomeIcon> */}
-          <p>Your talk card have been successfully created!</p>
-          <br />
-          <button onClick={() => setIsModalOpen(false)}>
-            <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-          </button>
-        </div>
-      )}
       {/* <Modal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
