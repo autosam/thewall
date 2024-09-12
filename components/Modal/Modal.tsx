@@ -43,10 +43,10 @@ export const Modal = ({
   );
 };
 
-export const ModalContent = ({ children }) => {
+export const ModalContent = ({ children }: { children: any }) => {
   return <div className="inline-flex flex-col gap-2">{children}</div>;
 };
 
-export const ModalButtonGroup = ({ children }) => {
+export const ModalButtonGroup = ({ children }: { children: any }) => {
   return <div className="inline-flex flex-row gap-2">{children}</div>;
 };

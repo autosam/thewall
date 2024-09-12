@@ -1,12 +1,19 @@
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../Button";
 import { useEffect, useState } from "react";
-import { GenderNames } from "@/types/Gender";
+import { Gender, GenderNames } from "@/types/Gender";
 import moment from "moment";
 import classNames from "classnames";
 import { useTalkCard } from "./TalkCard.hooks";
+import { TalkData } from "@/types/TalkData";
 
-export const TalkCard = (props: any) => {
+type TalkCardProps = TalkData & {
+  isMine?: boolean;
+  gender: Gender;
+  dark?: boolean;
+};
+
+export const TalkCard = (props: TalkCardProps) => {
   const {
     id,
     content,
@@ -101,7 +108,7 @@ export const TalkCard = (props: any) => {
   );
 };
 
-const Badge = ({ children }) => {
+const Badge = ({ children }: { children: any }) => {
   return (
     <div className="text-inherit bg-inherit absolute left-1 text-[8px] w-5 h-5 inline-flex justify-center items-center rounded-full font-semibold">
       {children}

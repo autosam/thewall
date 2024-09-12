@@ -10,22 +10,90 @@ const getRandomLoremIpsum = () => {
 
 export const getTalkCardsMock = (): TalkData[] => {
   return [
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.SHE },
-    { content: getRandomLoremIpsum(), gender: Genders.SHE },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.SHE },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.SHE },
-    { content: getRandomLoremIpsum(), gender: Genders.HE },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.HE },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.HE },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.THEY },
-    { content: getRandomLoremIpsum(), gender: Genders.SHE },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.SHE,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.SHE,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.SHE,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.SHE,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.HE,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.HE,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.HE,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.THEY,
+      id: "",
+      time: ""
+    },
+    {
+      content: getRandomLoremIpsum(), gender: Genders.SHE,
+      id: "",
+      time: ""
+    },
   ];
 };

@@ -4,7 +4,7 @@ import { useApiRequest, ENDPOINTS } from "@/utils/apiHelper";
 import { useAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
 
-export const useInputBar = ({ triggerRefresh }) => {
+export const useInputBar = ({ triggerRefresh }: { triggerRefresh: any }) => {
   const [id] = useAtom(userIdAtom);
   const [gender, setGender] = useAtom(userGenderWithEffectAtom);
   const [isSubmitting, setIsSubmitting] = useState(false);
