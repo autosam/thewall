@@ -31,7 +31,9 @@ export const InputBar = ({ triggerRefresh }: InputBarProps) => {
     setIsModalOpen,
   } = useInputBar({ triggerRefresh });
 
-  const inputClassName = classNames("w-2/3 relative flex justify-stretch");
+  const inputClassName = classNames(
+    "w-2/3 relative flex justify-stretch max-sm:w-full max-sm:px-2"
+  );
 
   return (
     <>

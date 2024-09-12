@@ -31,7 +31,7 @@ export default function Page() {
     <>
       {anyLoading && <PageLoading />}
       {!anyLoading && <TalkCardsContainer cards={data} />}
-      <div className="fixed bottom-0 w-full h-1/5 z-10 bg-gradient-to-t from-black to-transparent from-15% flex items-center justify-center">
+      <div className="fixed bottom-0 left-0 w-full h-1/5 z-10 bg-gradient-to-t from-black to-transparent from-15% flex items-center justify-center">
         <InputBar triggerRefresh={trigger} />
       </div>
     </>

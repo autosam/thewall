@@ -29,11 +29,11 @@ export const TalkCardsContainer = (props: TalkCardsContainerProps) => {
   const cardColumns = splitToNChunks(cards, 3);
 
   return (
-    <div className="flex flex-row gap-3 flex-wrap">
+    <div className="flex flex-row gap-3 flex-wrap max-sm:flex-col">
       {cardColumns.map((cardsCol, i) => (
         <div
           key={uid()}
-          className={`flex flex-col gap-3 w-1/4 flex-grow ${
+          className={`flex flex-col gap-3 w-1/4 flex-grow max-sm:w-full ${
             i == 1 && "-pt-24"
           }`}
         >

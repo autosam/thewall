@@ -61,7 +61,7 @@ export const TalkCard = (props: TalkCardProps) => {
     <div className={cardClass} data-id={id}>
       <div
         id="top-container"
-        className="flex justify-between w-full items-center h-auto flex-wrap"
+        className="flex justify-between w-full items-center h-auto sm:flex-wrap"
       >
         <div id="metadata" className={metadataClass}>
           <div>
