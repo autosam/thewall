@@ -17,9 +17,9 @@ export const TalkCardsContainer = (props: TalkCardsContainerProps) => {
   //     else currentChunkSize = CHUNK_SIZE;
   //   }
 
-  function splitToNChunks(array: any, n: number) {
+  function splitToNChunks(array: any[], n: number) {
     const nArray = array.slice();
-    let result = [];
+    let result: any[] = [];
     for (let i = n; i > 0; i--) {
       result.push(nArray.splice(0, Math.ceil(nArray.length / i)));
     }
