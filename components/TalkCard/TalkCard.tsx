@@ -23,6 +23,7 @@ export const TalkCard = (props: TalkCardProps) => {
     myLikeInteraction,
     likeCount: initialLikeCount,
     dislikeCount: initialDislikeCount,
+    isMock,
   } = props;
 
   let { dark } = props;
@@ -57,6 +58,8 @@ export const TalkCard = (props: TalkCardProps) => {
     "bg-red-800 hover:bg-red-900 text-white": !likeState && hasLiked,
   });
 
+  console.log(props);
+
   return (
     <div className={cardClass} data-id={id}>
       <div
@@ -75,28 +78,31 @@ export const TalkCard = (props: TalkCardProps) => {
           </div>
           <div>{moment(time).format("MMM Do")}</div>
         </div>
-        <div id="controls" className="flex gap-2 py-1">
-          <Button
-            onClick={() => handleSetLikeState(false)}
-            dark={dark}
-            className={falseButtonClass}
-            leftIcon={faTimes}
-            loading={dislikeLoading}
-          >
-            False
-            <Badge>{dislikeCount}</Badge>
-          </Button>
-          <Button
-            onClick={() => handleSetLikeState(true)}
-            dark={dark}
-            className={trueButtonClass}
-            leftIcon={faCheck}
-            loading={likeLoading}
-          >
-            True
-            <Badge>{likeCount}</Badge>
-          </Button>
-        </div>
+
+        {!isMock && (
+          <div id="controls" className="flex gap-2 py-1">
+            <Button
+              onClick={() => handleSetLikeState(false)}
+              dark={dark}
+              className={falseButtonClass}
+              leftIcon={faTimes}
+              loading={dislikeLoading}
+            >
+              False
+              <Badge>{dislikeCount}</Badge>
+            </Button>
+            <Button
+              onClick={() => handleSetLikeState(true)}
+              dark={dark}
+              className={trueButtonClass}
+              leftIcon={faCheck}
+              loading={likeLoading}
+            >
+              True
+              <Badge>{likeCount}</Badge>
+            </Button>
+          </div>
+        )}
       </div>
       <div id="text-container">
         <div className="text-4xl">

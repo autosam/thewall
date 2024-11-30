@@ -9,4 +9,5 @@ export type TalkData = {
   myLikeInteraction?: any;
   likeCount?: number;
   dislikeCount?: number;
+  isMock?: boolean
 };
