@@ -58,8 +58,6 @@ export const TalkCard = (props: TalkCardProps) => {
     "bg-red-800 hover:bg-red-900 text-white": !likeState && hasLiked,
   });
 
-  console.log(props);
-
   return (
     <div className={cardClass} data-id={id}>
       <div

@@ -1,3 +1,4 @@
+import { TalkData } from "@/types/TalkData";
 import axios from "axios";
 import { useEffect } from "react";
 import useSWR from "swr";
@@ -75,8 +76,14 @@ export const useApiRequest = (
     return mutate(url.toString(), true);
   };
 
+  const scramble = (data: any[] | undefined) => {
+    if(!data) return undefined;
+    return data
+      .sort(() => Math.random() - Math.random());
+  }
+
   return {
-    data: data?.data,
+    data: scramble(data?.data),
     response: data,
     error,
     isLoading,
